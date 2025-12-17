@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Notes Forever - Aesthetic To-Do List</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Quicksand:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+
+    <div class="background-overlay"></div>
+
+    <div class="greeting-popup" id="helloPopup">
+        <div class="greeting-content">
+            <img src="assets/characters/hello.gif" alt="Hello!" class="hello-gif">
+            <div class="greeting-text">
+                <h3>Welcome to Notes Forever! ✨</h3>
+                <p>Your sticky notes, digitally organized</p>
+                <button id="closeGreeting">
+                    <i class="fas fa-sparkles"></i> Let's Begin!
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <div class="container">
+        <header class="header">
+            <div class="logo">
+                <i class="fas fa-sticky-note"></i>
+                <h1>Notes Forevveeerr!!</h1>
+                <span class="emoji">🌷👾</span>
+            </div>
+        </header>
+     
+        <div class="dashboard">         
+            <div class="sidebar">             
+                <div class="dog-animation-area" id="dogArea">
+                    <div class="laika-dog" id="laikaDog">
+                        <img src="assets/characters/laika dog.gif" alt="Laika Dog" class="dog-gif">
+                    </div>
+                    <div class="progress-tracker">
+                        <div class="progress-bar">
+                            <div class="progress-fill" id="progressFill"></div>
+                        </div>
+                        <div class="progress-text">
+                            <span id="taskCount">0</span> tasks completed
+                        </div>
+                    </div>
+                </div>
+
+                <div class="character-section" id="characterSection">
+                    <div class="character-container">
+                        <img src="assets/characters/TO-DO image.jpg" alt="TO-DO" class="todo-image" id="todoImage">
+                    </div>
+                </div>
+
+                <div class="idle-character" id="sleepingGirl">
+                    <div class="idle-content">
+                        <img src="assets/characters/sleeping girl pixe.gif" alt="Sleeping Pixel Girl" class="sleeping-character">
+                        <p><i class="fas fa-moon"></i> All caught up! Time to rest...</p>
+                    </div>
+                </div>
+
+                <div class="quick-stats">
+                    <div class="stat-card">
+                        <i class="fas fa-check-circle"></i>
+                        <div class="stat-info">
+                            <h4>Completed</h4>
+                            <p id="completedCount">0</p>
+                        </div>
+                    </div>
+                    <div class="stat-card">
+                        <i class="fas fa-clock"></i>
+                        <div class="stat-info">
+                            <h4>Pending</h4>
+                            <p id="pendingCount">0</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="middle-panel">
+                <div class="create-card" id="createNewBoard">
+                    <div class="card-content">
+                        <div class="create-icon">
+                            <i class="fas fa-plus"></i>
+                        </div>
+                        <h3>Create New Board</h3>
+                        <p>Click to create notes or to-do list</p>
+                    </div>
+                    
+                    <div class="dog-overlay">
+                        <div class="dog-container">
+                            <img src="assets/characters/dog animation.gif" alt="Dog Animation" class="dog-animation" id="hoverDog">
+                        </div>
+                        <div class="dog-text">
+                            <i class="fas fa-paw"></i>
+                            <p>Create something awesome!</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="right-panel">
+                <div class="progress-card" id="progressCard">
+                    <div class="card-content">
+                        <div class="progress-icon">
+                            <i class="fas fa-chart-line"></i>
+                        </div>
+                        <h3>Progress Check</h3>
+                        <p>Click to see your progress</p>
+                    </div>
+                    
+                    <div class="progress-overlay">
+                        <div class="progress-container">
+                            <img src="assets/characters/progress 2.gif" alt="Progress Animation" class="progress-animation" id="progressGif">
+                        </div>
+                        <div class="progress-text">
+                            <i class="fas fa-chart-bar"></i>
+                            <p>Track your progress!</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="progress-panel" id="progressPanel">
+                    <div class="panel-header">
+                        <h3><i class="fas fa-trophy"></i> Your Progress</h3>
+                        <button class="close-panel" id="closeProgress">×</button>
+                    </div>
+                
+                    <div class="quick-stats-panel">
+                        <div class="stat">
+                            <i class="fas fa-fire"></i>
+                            <div>
+                                <h4>Current Streak</h4>
+                                <p id="currentStreak">0 days</p>
+                            </div>
+                        </div>
+                        <div class="stat">
+                            <i class="fas fa-check-circle"></i>
+                            <div>
+                                <h4>Completed</h4>
+                                <p id="totalCompleted">0 tasks</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="activity">
+                        <h4><i class="fas fa-history"></i> Recent Activity</h4>
+                        <div class="activity-list" id="activityList">
+                            <p>Welcome to Notes Forever!</p>
+                        </div>
+                    </div>
+                    
+                    <div class="tip">
+                        <h4><i class="fas fa-lightbulb"></i> Tip of the Day</h4>
+                        <p id="dailyTip">Start by creating your first board!</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="boards-grid-container">
+            <div class="boards-grid" id="boardsContainer">
+            </div>
+        </div>
+
+        
+<div class="modal" id="boardModal">
+    <div class="modal-content">
+        <span class="close-modal">&times;</span>
+        <h2><i class="fas fa-sticky-note"></i> Create New Board</h2>
+        
+        <div class="title-with-emoji">
+            <div class="emoji-picker-container">
+                <div class="selected-emoji" id="selectedEmoji">📋</div>
+                <div class="emoji-picker-btn" id="emojiPickerBtn">
+                    <i class="fas fa-smile"></i>
+                </div>
+                <div class="emoji-picker" id="emojiPicker">
+                    <div class="emoji-search">
+                        <input type="text" id="emojiSearch" placeholder="Search emojis...">
+                    </div>
+                    <div class="emoji-categories">
+                        <button class="emoji-category active" data-category="frequent">Frequent</button>
+                        <button class="emoji-category" data-category="food">Food</button>
+                        <button class="emoji-category" data-category="objects">Objects</button>
+                        <button class="emoji-category" data-category="activities">Activities</button>
+                        <button class="emoji-category" data-category="symbols">Symbols</button>
+                    </div>
+                    <div class="emoji-grid" id="emojiGrid">
+                    </div>
+                </div>
+            </div>
+            <input type="text" id="boardTitle" placeholder="Board title (e.g., Grocery, Tasks, Ideas)">
+        </div>
+        
+        <div class="color-picker">
+            <h4>Choose Color</h4>
+            <div class="color-options">
+                <div class="color-option" style="background-color: #ffcccc;" data-color="#ffcccc"></div>
+                <div class="color-option" style="background-color: #ccffcc;" data-color="#ccffcc"></div>
+                <div class="color-option" style="background-color: #cce6ff;" data-color="#cce6ff"></div>
+                <div class="color-option" style="background-color: #fff0cc;" data-color="#fff0cc"></div>
+                <div class="color-option" style="background-color: #e6ccff;" data-color="#e6ccff"></div>
+            </div>
+        </div>
+        <button id="createBoardBtn" class="create-btn">
+            <i class="fas fa-magic"></i> Create Board
+        </button>
+    </div>
+</div>
+
+        <div class="modal" id="taskModal">
+            <div class="modal-content">
+                <span class="close-modal">&times;</span>
+                <h2 id="modalBoardTitle"><i class="fas fa-tasks"></i> Add New Note/Task</h2>
+                <input type="text" id="taskInput" placeholder="Write your note or task here...">
+                <div class="priority-selector">
+                    <h4></h4>
+                </div>
+                <button id="addTaskBtn" class="create-btn">
+                    <i class="fas fa-plus-circle"></i> Add
+                </button>
+            </div>
+        </div>
+
+        <div class="modal" id="deleteModal">
+            <div class="modal-content">
+                <span class="close-modal">&times;</span>
+                <h2><i class="fas fa-trash"></i> Confirm Delete</h2>
+                <p id="deleteMessage">Are you sure you want to delete this?</p>
+                <div class="modal-buttons">
+                    <button id="cancelDelete" class="cancel-btn">Cancel</button>
+                    <button id="confirmDelete" class="delete-btn">Delete</button>
+                </div>
+            </div>
+        </div>
+
+        <footer class="footer">
+            <p>Made with <i class="fas fa-heart"></i> • Sticky Notes Not Sticky</p>
+        </footer>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
